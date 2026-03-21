@@ -73,15 +73,15 @@ export default function HoveradsLandingPage() {
       {/* Content wrapper */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Navbar */}
-        <nav className="flex items-center justify-between w-full px-6 md:px-[120px] py-[24px]">
+        <nav className="flex items-center justify-between w-full px-4 sm:px-6 md:px-[120px] py-4 md:py-[24px]">
           <div className="flex items-center gap-8 lg:gap-[120px]">
             {/* Logo */}
-            <div className="relative w-[180px] h-[40px] flex items-center shrink-0">
+            <div className="relative w-[140px] h-[32px] md:w-[180px] md:h-[40px] flex items-center shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="Hoverads Logo"
                 fill
-                sizes="180px"
+                sizes="(max-width: 768px) 140px, 180px"
                 className="object-contain"
                 priority
               />
@@ -104,42 +104,43 @@ export default function HoveradsLandingPage() {
             </ul>
           </div>
 
-          {/* Nav Email - More prominent */}
+          {/* Nav Email */}
           <div className="shrink-0 flex items-center">
             <a
               href="mailto:contact@hoverads.in"
-              className="flex items-center gap-3 px-6 py-2.5 rounded-full bg-white text-black text-[14px] font-bold hover:bg-white/90 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              className="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-white text-black text-[13px] md:text-[14px] font-bold hover:bg-white/90 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
-              <Mail className="w-4 h-4" />
-              contact@hoverads.in
+              <Mail className="w-4 h-4 md:w-5 md:h-5" />
+              <span className="hidden sm:inline">contact@hoverads.in</span>
+              <span className="inline sm:hidden">Contact</span>
             </a>
           </div>
         </nav>
 
         {/* Hero Content */}
-        <section className="flex flex-col items-center justify-center w-full px-6 pt-[120px] md:pt-[180px] pb-[80px]">
+        <section className="flex flex-col items-center justify-center w-full px-4 sm:px-6 pt-[100px] md:pt-[180px] pb-[60px] md:pb-[80px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center max-w-[900px] gap-[32px]"
+            className="flex flex-col items-center text-center max-w-[900px] gap-[24px] md:gap-[32px]"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-              <p className="text-[13px] font-medium tracking-wide">
+              <p className="text-[11px] md:text-[13px] font-medium tracking-wide">
                 <span className="text-white/60">Now taking bookings for</span>{" "}
                 <span className="text-white">Summer 2026</span>
               </p>
             </div>
 
             {/* Heading & Subtitle wrapper */}
-            <div className="flex flex-col items-center gap-[24px]">
-              <h1 className="text-[40px] md:text-[72px] font-semibold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
+            <div className="flex flex-col items-center gap-[20px] md:gap-[24px]">
+              <h1 className="text-[36px] sm:text-[48px] md:text-[72px] font-semibold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
                 The Sky is Your <br className="hidden md:block" /> New Billboard
               </h1>
 
-              <p className="text-[16px] md:text-[18px] font-normal text-white/60 max-w-[640px] leading-relaxed">
+              <p className="text-[15px] sm:text-[16px] md:text-[18px] font-normal text-white/60 max-w-[640px] leading-relaxed px-2">
                 Elevate your brand with massive flying billboards and mesmerizing drone light shows that turn the night sky into a canvas of endless possibilities.
               </p>
             </div>
@@ -147,8 +148,8 @@ export default function HoveradsLandingPage() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="w-full px-6 md:px-[120px] py-[80px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section id="services" className="w-full px-4 sm:px-6 md:px-[120px] py-[60px] md:py-[80px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service) => (
               <motion.div
                 key={service.title}
@@ -156,7 +157,7 @@ export default function HoveradsLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: service.delay }}
-                className="group relative p-8 rounded-[24px] bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-500"
+                className="group relative p-6 sm:p-8 rounded-[24px] bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 transition-all duration-500"
               >
                 <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-white group-hover:scale-110 group-hover:bg-white group-hover:text-black transition-all duration-500">
                   <service.icon className="w-6 h-6" />
@@ -171,25 +172,25 @@ export default function HoveradsLandingPage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="w-full px-6 md:px-[120px] py-[100px] bg-white/[0.02]">
-          <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-16">
+        <section id="about" className="w-full px-4 sm:px-6 md:px-[120px] py-[80px] md:py-[100px] bg-white/[0.02]">
+          <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex-1 space-y-8"
+              className="flex-1 space-y-6 md:space-y-8"
             >
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10">
                 <Info className="w-4 h-4 text-blue-400" />
-                <span className="text-[12px] font-bold uppercase tracking-widest text-white/60">How we work</span>
+                <span className="text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-white/60">How we work</span>
               </div>
-              <h2 className="text-[32px] md:text-[48px] font-semibold leading-tight">
-                Aerial Storytelling <br /> with Precision
+              <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-tight">
+                Aerial Storytelling <br className="hidden md:block" /> with Precision
               </h2>
-              <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-[500px]">
+              <p className="text-white/60 text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed max-w-[500px]">
                 We use high-performance drones to turn the night sky into a massive display. Whether it's showing your brand's ads or creating magical birthday events, we transform any space into a mesmerizing visual experience.
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 {[
                   "Massive Flying Billboards",
                   "Birthday & Anniversary Specials",
@@ -201,9 +202,9 @@ export default function HoveradsLandingPage() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-3 text-white/80"
+                    className="flex items-center gap-3 text-white/80 text-[14px] md:text-[16px]"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
                     {item}
                   </motion.li>
                 ))}
@@ -213,7 +214,7 @@ export default function HoveradsLandingPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex-1 relative aspect-video w-full rounded-[32px] overflow-hidden border border-white/10"
+              className="flex-1 relative aspect-video w-full rounded-[24px] md:rounded-[32px] overflow-hidden border border-white/10 mt-8 md:mt-0"
             >
               <Image
                 src="/about-drone.png"
@@ -228,8 +229,8 @@ export default function HoveradsLandingPage() {
         </section>
 
         {/* Shows Section - Coming Soon */}
-        <section id="shows" className="w-full px-6 md:px-[120px] py-[100px]">
-          <div className="relative p-12 md:p-24 rounded-[40px] overflow-hidden text-center bg-white/[0.03] border border-white/10">
+        <section id="shows" className="w-full px-4 sm:px-6 md:px-[120px] py-[80px] md:py-[100px]">
+          <div className="relative p-8 sm:p-12 md:p-24 rounded-[32px] md:rounded-[40px] overflow-hidden text-center bg-white/[0.03] border border-white/10">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
@@ -237,14 +238,14 @@ export default function HoveradsLandingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative z-10 space-y-6"
+              className="relative z-10 space-y-4 md:space-y-6"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/10 border border-white/20">
-                <Clock className="w-5 h-5 text-yellow-400" />
-                <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-white">Coming Soon</span>
+              <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full bg-white/10 border border-white/20">
+                <Clock className="w-4 h-4 md:w-5 md:h-5 text-yellow-400" />
+                <span className="text-[12px] md:text-[14px] font-bold uppercase tracking-[0.2em] text-white">Coming Soon</span>
               </div>
-              <h2 className="text-[36px] md:text-[64px] font-bold tracking-tight">Spectacular Public Shows</h2>
-              <p className="text-white/50 text-[18px] md:text-[20px] max-w-[700px] mx-auto">
+              <h2 className="text-[28px] sm:text-[40px] md:text-[64px] font-bold tracking-tight">Spectacular Public Shows</h2>
+              <p className="text-white/50 text-[15px] sm:text-[16px] md:text-[20px] max-w-[700px] mx-auto px-2 md:px-0">
                 We are preparing a series of mesmerizing light shows for cities and festivals. Follow us on social media to stay updated on our upcoming tour dates.
               </p>
             </motion.div>
@@ -252,15 +253,15 @@ export default function HoveradsLandingPage() {
         </section>
 
         {/* Sustainability Section */}
-        <section id="sustainability" className="w-full px-6 md:px-[120px] py-[100px]">
-          <div className="max-w-[1000px] mx-auto bg-gradient-to-br from-green-500/10 to-blue-500/5 rounded-[40px] p-8 md:p-16 border border-white/5">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center rounded-full bg-green-500/20 text-green-400 shrink-0">
-                <Leaf className="w-12 h-12 md:w-16 md:h-16" />
+        <section id="sustainability" className="w-full px-4 sm:px-6 md:px-[120px] py-[80px] md:py-[100px]">
+          <div className="max-w-[1000px] mx-auto bg-gradient-to-br from-green-500/10 to-blue-500/5 rounded-[32px] md:rounded-[40px] p-6 sm:p-8 md:p-16 border border-white/5">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-20 h-20 md:w-32 md:h-32 flex items-center justify-center rounded-full bg-green-500/20 text-green-400 shrink-0">
+                <Leaf className="w-10 h-10 md:w-16 md:h-16" />
               </div>
-              <div className="space-y-4 text-center md:text-left">
-                <h2 className="text-[28px] md:text-[40px] font-semibold text-green-50">Digital Over Disposable</h2>
-                <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed">
+              <div className="space-y-3 md:space-y-4 text-center md:text-left">
+                <h2 className="text-[24px] sm:text-[28px] md:text-[40px] font-semibold text-green-50">Digital Over Disposable</h2>
+                <p className="text-white/60 text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed">
                   Traditional aerial advertising relies on massive plastic banners and chemical-heavy print materials that end up in landfills after a single campaign. Our drone billboards are 100% digital, zero-emission, and fully reusable—eliminating plastic waste while delivering a more vibrant, dynamic impact on the sky.
                 </p>
               </div>
@@ -269,48 +270,50 @@ export default function HoveradsLandingPage() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-auto w-full px-6 md:px-[120px] py-[80px] border-t border-white/10 bg-black shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
-            <div className="flex flex-col gap-8">
-              <div className="relative w-[180px] h-[40px]">
-                <Image src="/logo.png" alt="Hoverads Logo" fill sizes="180px" className="object-contain" />
+        <footer className="mt-auto w-full px-4 sm:px-6 md:px-[120px] py-[60px] md:py-[80px] border-t border-white/10 bg-black shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16">
+            <div className="flex flex-col gap-6 md:gap-8">
+              <div className="relative w-[140px] h-[32px] md:w-[180px] md:h-[40px]">
+                <Image src="/logo.png" alt="Hoverads Logo" fill sizes="(max-width: 768px) 140px, 180px" className="object-contain" />
               </div>
-              <p className="text-white/40 text-[15px] max-w-[320px] leading-relaxed">
+              <p className="text-white/40 text-[14px] md:text-[15px] max-w-[320px] leading-relaxed">
                 Redefining the sky with cutting-edge drone technology. Sustainable, silent, and visually stunning.
               </p>
             </div>
 
-            <div className="flex flex-col items-start gap-6">
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-white/30">Stay Connected</span>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all duration-500 group"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  </a>
-                ))}
+            <div className="flex flex-col sm:flex-row items-start lg:items-center gap-10 sm:gap-16 lg:gap-24">
+              <div className="flex flex-col items-start gap-4 md:gap-6">
+                <span className="text-[11px] md:text-[12px] font-bold uppercase tracking-[0.3em] text-white/30">Stay Connected</span>
+                <div className="flex items-center gap-3 md:gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 md:p-4 rounded-[14px] md:rounded-2xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all duration-500 group"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="flex flex-col items-start gap-6">
-              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-white/30">Inquiries</span>
-              <a
-                href="mailto:contact@hoverads.in"
-                className="text-[20px] md:text-[24px] font-bold tracking-tight hover:text-blue-400 transition-colors flex items-center gap-3"
-              >
-                <Mail className="w-6 h-6" />
-                contact@hoverads.in
-              </a>
+              <div className="flex flex-col items-start gap-4 md:gap-6">
+                <span className="text-[11px] md:text-[12px] font-bold uppercase tracking-[0.3em] text-white/30">Inquiries</span>
+                <a
+                  href="mailto:contact@hoverads.in"
+                  className="text-[18px] sm:text-[20px] md:text-[24px] font-bold tracking-tight hover:text-blue-400 transition-colors flex items-center gap-2 md:gap-3"
+                >
+                  <Mail className="w-5 h-5 md:w-6 md:h-6" />
+                  contact@hoverads.in
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[14px] text-white/20">
+          <div className="mt-16 md:mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-[13px] md:text-[14px] text-white/20">
             <p>© 2026 Hoverads. All rights reserved.</p>
           </div>
         </footer>
